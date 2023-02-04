@@ -7,7 +7,8 @@ const Intern = require("./lib/intern");
 
 teamArray = [];
 
-function StartUp()
+function startUp() {
+
     function createTeam () {
         inquirer.createPromptModule([{
             type: "list",
@@ -63,3 +64,72 @@ function StartUp()
             createTeam(); 
         });
     }
+
+    function addEngineer() {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "Enter engineer's name."
+            },
+
+            {
+                type: "input",
+                name: "engineerId",
+                message: "Enter engineer's employee ID number."
+            },
+
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "Enter engineer's Github username."
+            }
+        ]).then(answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers. engineerEmail, answers. engineerGithub);
+            teamArray.push(engineer);
+            createTeam();
+        });
+    }
+
+    function addIntern(){
+        inquirer.prompt([
+
+            {
+                type: "input",
+                name: "internName",
+                message: "Enter interns name."
+            },
+
+            {
+                type: "input",
+                name: "internId",
+                message: "Enter intern's employee ID number."
+            },
+
+            {
+                type: "input",
+                name: "internEmail",
+                message: "Enter intern's E-mail."
+            },
+
+            {
+                type: "input",
+                name: "internSchool",
+                message: "Enter intern's current school"
+            }
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, asnwers.internEmail, answers.internSchool);
+            teamArray.push(intern);
+            createTeam();
+        });
+    }
+
+    function htmlBuilder () {
+        console.log("Dream Team Assembled!")
+        fs.writeFileSync(outputPath, generateTeam(teamArray), "UTF-8")
+    }
+
+    createTeam();
+}
+
+startUp();
