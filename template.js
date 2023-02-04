@@ -8,7 +8,7 @@ const generateTeam = team => {
                 <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item">ID: ${manager.getID()}</li>
+                    <li class="list-group-item">ID: ${manager.getId()}</li>
                     <li class+"list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
                     <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
                 </ul>
@@ -26,7 +26,7 @@ const generateTeam = team => {
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item">ID: ${engineer.getID()}</li>
+                <li class="list-group-item">ID: ${engineer.getId()}</li>
                 <li class+"list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                 <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
             </ul>
@@ -43,8 +43,8 @@ const generateTeam = team => {
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item">ID: ${intern.getID()}</li>
-                <li class+"list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="list-group-item">ID: ${intern.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
                 <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
@@ -59,7 +59,7 @@ const generateTeam = team => {
         .map(manager => generateManager(manager))
     );
     html.push(team
-        .filter(employee +> employee.getRole() === "Engineer")
+        .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
     );
@@ -85,6 +85,7 @@ module.exports = team => {
     <title>Dream Team</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 
 <body>

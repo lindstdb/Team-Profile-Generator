@@ -1,16 +1,20 @@
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const generateTeam = require("./template")
 const Engineer = require("./lib/engineer");
 const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
+
 
 teamArray = [];
 
 function startUp() {
 
     function createTeam () {
-        inquirer.createPromptModule([{
+       inquirer.prompt([{
             type: "list",
             message: "What type of employee are you adding?",
             name: "addEmployeePrompt",
@@ -30,7 +34,7 @@ function startUp() {
                 default:
                     htmlBuilder();
             }
-        })
+        });
     }
 
     function addManager(){
@@ -84,7 +88,8 @@ function startUp() {
                 name: "engineerGithub",
                 message: "Enter engineer's Github username."
             }
-        ]).then(answers => {
+        ])
+        .then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers. engineerEmail, answers. engineerGithub);
             teamArray.push(engineer);
             createTeam();
@@ -118,7 +123,7 @@ function startUp() {
                 message: "Enter intern's current school"
             }
         ]).then(answers => {
-            const intern = new Intern(answers.internName, answers.internId, asnwers.internEmail, answers.internSchool);
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             teamArray.push(intern);
             createTeam();
         });
