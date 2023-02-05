@@ -36,3 +36,5 @@ https://drive.google.com/file/d/1TNeF_o6cZetAkgeTN06GJsE2Po205l9h/view
 ## Tests
 
 To run the tests open the test folder in the integrated terminal and run: "npm install jest".
+Next run npm test in the integrated terminal.
+Finally, pass with flying colors.
