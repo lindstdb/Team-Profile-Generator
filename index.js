@@ -85,6 +85,12 @@ function startUp() {
 
             {
                 type: "input",
+                name: "engineerEmail",
+                message: "Enter engineer's email."
+            },
+
+            {
+                type: "input",
                 name: "engineerGithub",
                 message: "Enter engineer's Github username."
             }
@@ -102,7 +108,7 @@ function startUp() {
             {
                 type: "input",
                 name: "internName",
-                message: "Enter interns name."
+                message: "Enter intern's name."
             },
 
             {
