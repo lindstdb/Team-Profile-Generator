@@ -1,15 +1,28 @@
-.jumbotron {
-    border-radius: 0;
+
+.team-heading {
+    padding: 35px;
+    justify-content: center;
+    height: 150px;
 }
 
 .card {
+    min-width: 18rem;
+    max-width: 18rem;
     box-shadow: 5px 5px 5px gray;
     margin: 1rem;
     border: none;
 }
 
 .card-body {
+    padding: 7px;
     background-color: white;
     color: blue;
+    border: 2px solid black;
 }
 
+.email{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px gray solid;
+    border-top: 1px gray solid;
+}

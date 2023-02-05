@@ -9,13 +9,13 @@ const generateTeam = team => {
                 <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
             <div class="card-body">
                     <p class="card-text">ID: ${manager.getId()}</p>
-                    <p class="card-text">Email: <a href="Email:${manager.getEmail()}">${manager.getEmail()}</a></p>
+                    <p class="card-text email">Email: <a href="Email:${manager.getEmail()}">${manager.getEmail()}</a></p>
                     <p class="card-text">Office Number: ${manager.getOfficeNumber()}</p>
             </div>
             </div>
             </div>
-        </div>
-        `;
+    </div>
+        `
     };
 
 
@@ -28,7 +28,7 @@ const generateTeam = team => {
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
         <div class="card-body">
                 <p class="card-text">ID: ${engineer.getId()}</p>
-                <p class="card-text">Email: <a href="Email:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+                <p class="card-text email">Email: <a href="Email:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
                 <p class="card-text">Github: <a href="https://github.com/${engineer.getGithub()}" target="blank" rel="noopener noreferrer">${engineer.getGithub()}</a></p>
         </div>
         </div>
@@ -46,7 +46,7 @@ const generateTeam = team => {
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
         <div class="card-body">
                 <p class="card-text">ID: ${intern.getId()}</p>
-                <p class="card-text">Email: <a href="Email:${intern.getEmail()}">${intern.getEmail()}</a></p>
+                <p class="card-text email">Email: <a href="Email:${intern.getEmail()}">${intern.getEmail()}</a></p>
                 <p class="card-text">School: ${intern.getSchool()}</p>
         </div>
         </div>
